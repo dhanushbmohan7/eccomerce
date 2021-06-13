@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signuip</title>
+</head>
+<body>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="span6">
+                <form class="form-horizontal"  action="{% url 'signup' %}" method="post">
+                    {% csrf_token %}
+                    <div class="heading">
+                        <h4 class="form-heading">Sign Up</h4>
+                    </div>
+
+                   
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputFirst">
+                        Name</label>
+
+                        <div class="controls">
+                            <input id="inputFirst" placeholder=
+                            "E.g. Ashwin" type="text" name='name'>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group">
+                        <label class="control-label" for=
+                        "inputEmail">Email</label>
+
+                        <div class="controls">
+                            <input id="inputEmail" placeholder=
+                            "E.g. ashwinh@cybage.com" type="email" name="email">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for=
+                        "inputUser">Username</label>
+
+                        <div class="controls">
+                            <input id="inputUser" placeholder=
+                            "E.g. ashwinhegde" type="text" name="username">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for=
+                        "inputPassword">Password</label>
+
+                        <div class="controls">
+                            <input id="inputPassword" placeholder=
+                            "Min. 8 Characters" type="password" name="password">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <label class="checkbox"><input type="checkbox">
+                            I agree all your <a href="#">Terms of
+                            Services</a></label> <button class=
+                            "btn btn-success" type="submit">Sign
+                            Up</button> <button class="btn" type=
+                            "button">Help</button>
+                        </div>
+                    </div>
+                    </form>
+
+                    <div class="alert alert-info">
+                        <button class="close" data-dismiss="alert" type=
+                        "button">×</button> <strong>Confirmation:</strong>
+                        A confirmation email has been sent to your
+                        email.<br>
+                        Thank you for your registration.
+                    </div>
+                </form>
+            </div>
+
+            <div class="span6">
+                <div class="area">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9znAFssNv4IRahPR9OUXkn_Ay3ikwqs5nNw&usqp=CAU">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

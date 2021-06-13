@@ -1,0 +1,80 @@
+{% load widget_tweaks %}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="form-horizontal">
+<!-- Form Name -->
+<legend>PRODUCTS</legend>
+
+<!-- Text input-->
+
+
+<!-- Text input-->
+<form action="{% url 'sell' %}" method="post" enctype="multipart/form-data" >
+       {% csrf_token %}
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>  
+  <div class="col-md-4">
+        
+         {% render_field form.product_name class="form-control input-md" %}
+  
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_name_fr">PRODUCT DESCRIPTION </label>  
+  <div class="col-md-4">
+         {% render_field form.product_description class="form-control input-md" %}
+  
+  </div>
+</div>
+
+<div style="margin-left: 35%;">
+
+ Category {% render_field form.product_category %}
+</div>
+<br>
+
+<!-- Text input-->
+
+
+<div class="form-group">
+       <label class="col-md-4 control-label" for="product_name_fr">PRODUCT PRICE</label>  
+       <div class="col-md-4">
+              {% render_field form.product_price class="form-control input-md"%}
+       
+         
+       </div>
+     </div>
+     
+
+<!-- Textarea -->
+
+ <!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="filebutton">main_image</label>
+  <div class="col-md-4">
+   {%  render_field form.product_image  %}
+  </div>
+</div>
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="filebutton">Image2</label>
+  <div class="col-md-4">
+   {% render_field form.product_image2 %}
+  </div>
+</div><input type="submit" value="Add" style="margin-left: 40%;">
+</form>
+
+
+        
+      
+
+</div>
+  </div>
+ 

@@ -1,0 +1,36 @@
+
+{% extends 'theme.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title></title>
+</head>
+<body>
+
+{% block content %}
+{% if data %}
+{% for i in data %}
+       <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{i.product_name}}</h5>
+                <p class="card-text">{{i.product_description}}</p></p>
+                <p class="card-text"><small class="text-muted">{{i.product_price}}</small></p>
+              </div>
+              <img src="{{i.product_image.url}}" alt="Card image cap" height="150px" width="100px">
+            </div>
+        {% endfor %} 
+        {% else %} 
+        <div class="card-body">
+               <h2>
+                      Items not available now!!
+               </h2>
+
+        </div>  
+        {% endif %}
+
+            {% endblock %}
+</body>
+</html>

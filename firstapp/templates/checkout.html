@@ -1,0 +1,98 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class='container'>
+    <div class='row' style='padding-top:25px; padding-bottom:25px;'>
+        <div class='col-md-12'>
+            <div id='mainContentWrapper'>
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 style="text-align: center;">
+                        Review Your Order & Complete Checkout
+                    </h2>
+                    <hr/>
+                    <a href="{% url 'index' %}" class="btn btn-info" style="width: 100%;">Add More Products & Services</a>
+                    <hr/>
+                    <div class="shopping_cart">
+                        <form class="form-horizontal" role="form" action="" method="post" id="payment-form">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Review
+                                                Your Order</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <div class="items">
+                                                <div class="col-md-9">
+                                                    <table class="table table-striped">
+                                                       
+                                                        <tr>
+                                                            
+                                                            <td>
+                                                                <b>{{data.name}}</b>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div style="text-align: center;">
+                                                        <h3>Order Total</h3>
+                                                        <h3><span style="color:green;">&#8377;{{data.price}}</span></h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                       
+                                            
+                                    </h4>
+                                   >
+                                </div>
+                               
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <div style="text-align: center; width:100%;">
+                                            <input type="text" name="id" value="{{data.id}}">
+                                            <input type="submit" value="Buy">
+                                        
+                                            </div>
+                                            </h4>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </h4>
+                                        
+                                    </h4>
+                                </div>
+
+                     
+                                
+                            </div>
+                            
+                    </div>
+                </div>
+                
+
+                <form action="{% url 'confirmed' %}" method="post">
+                    {% csrf_token %}
+                    Name<input type="text" name="name" id="name">
+                    <input type="hidden" name="id" value="{{data.id}}">
+                    <input type="submit" value="go">
+                </form
+            </div>
+        </div>
+    </div>
+
+
