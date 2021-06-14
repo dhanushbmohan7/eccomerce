@@ -1,0 +1,9 @@
+body{
+       background-color: rgb(34, 33, 33);
+       padding-left: 40%;
+       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+       color:white;
+}
+div {
+       width: 20%;
+}
