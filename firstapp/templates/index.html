@@ -28,7 +28,7 @@
 <body>
  
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Shopping</a>
+    <a class="navbar-brand" href="#">PKART</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -106,8 +106,8 @@
       <div class="row">
         
     {% for items in content %}
-    <div class="col-md-3">
-    <div class="card" style="width: 18rem;">
+    <div class="col-md-12">
+    <div class="card" style="width: 300px;margin-left:60px;margin-bottom: 20px;">
       <form action="" method="get">
         {% csrf_token %}
         
@@ -119,8 +119,9 @@
             
             <form action="{% url 'home' %}" method="GET">
               {% csrf_token %}
-              <input type="hidden" name="id" value="{{items.id}}">
-              <input type="submit" value="{{items.product_name}}" class="btn btn-primary">
+              <a href="{% url 'profile' items.id  %}">
+               {{items.product_name}}
+              </a>
             </form>
             
           </h5>
