@@ -223,7 +223,8 @@ def base_layout(request):
 def buy_cart(request):
     data=cart_items.objects.all()
     total_price=cart_items.objects.all().aggregate(Sum('price'))
-    return render(request,'check2.html',{'data':data,'sum':total_price['price__sum']})    
+    name=request.session['name']
+    return render(request,'check2.html',{'data':data,'sum':total_price['price__sum'],'name':name})    
 
 def sell(request):
     
