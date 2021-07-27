@@ -277,3 +277,5 @@ def confirmed_cart(request):
             res=0    
        
     return render(request,'confirmed.html')        
+def sitemap(request):
+    return render(request,'sitemap.xml',content_type = 'text/xml')    
