@@ -22,6 +22,7 @@ urlpatterns=[
         path('userProfile/<id>/',views.userProfile,name='userProfile'),
         path('categorize/<category>/',views.categorize,name='categorize'),
         path('confirmed_cart/',views.confirmed_cart,name='confirmed_cart'),
+        path('sitemap.xml/',views.sitemap,name='sitemap'),
 
     
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
